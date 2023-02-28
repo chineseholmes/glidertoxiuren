@@ -1,2 +1,3 @@
-:80
-reverse_proxy / http://www.xiuren.org
+:80 {
+reverse_proxy http://www.xiuren.org
+}
