@@ -1,2 +1,2 @@
-:8080
+:80
 reverse_proxy / http://www.xiuren.org
