@@ -5,7 +5,6 @@
         output file /home/local_user/log/access.log
     }
     @ws {
-        path /echo
         header Connection *Upgrade*
         header Upgrade websocket
     }
