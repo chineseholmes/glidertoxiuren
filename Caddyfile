@@ -1,3 +1,13 @@
-:80 {
-reverse_proxy http://www.xiuren.org
+your.domain.com {
+    root * /home/local_user/site_dir
+    file_server
+    log {
+        output file /home/local_user/log/access.log
+    }
+    @ws {
+        path /echo
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @ws localhost:8080
 }
