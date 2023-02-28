@@ -1,9 +1,5 @@
 :80 {
-    root * /home/local_user/site_dir
     file_server
-    log {
-        output file /home/local_user/log/access.log
-    }
     @ws {
         header Connection *Upgrade*
         header Upgrade websocket
