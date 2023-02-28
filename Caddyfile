@@ -1,8 +1,12 @@
-:80 {
-    file_server
-    @ws {
-        header Connection *Upgrade*
-        header Upgrade websocket
+:80
+{
+    handle_path /ws {    
+        reverse_proxy localhost:8080  
     }
-    reverse_proxy @ws localhost:8080
+    handle {
+        reverse_proxy http://www.xiuren.org {
+            trusted_proxies 0.0.0.0/0
+            header_up Host {upstream_hostport}
+        }
+    }
 }
